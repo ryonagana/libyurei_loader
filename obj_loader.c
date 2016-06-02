@@ -136,7 +136,7 @@ struct obj_model  *obj_loadfile(const char *filename){
 			}	
 
 	}
-
+    model->vertices = v;
 	model->vertices_count = vertex_count;
 
 
