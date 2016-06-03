@@ -17,21 +17,26 @@ static struct obj_model *obj_AllocModel(){
 		return model;
 	}
 
-	model->vertices = NULL;
+	model->vertices =  NULL;
+
 
 	return model;
 }
 
+
 static struct obj_vertex *obj_AllocVertex(){
-		struct obj_vertex *v = NULL;
-
-        v = calloc(sizeof(struct obj_vertex),1);
-		v->x = 0;
-		v->y = 0;
-		v->z = 0;
-
+	struct obj_vertex  *v = NULL;
+	v = malloc(sizeof(struct obj_vertex));
+	if(!v){
 		return v;
+	}
 
+	v->x = 0;
+	v->y = 0;
+	v->z = 0;
+	v->next = NULL;
+
+	return v;
 }
 
 static float* obj_append_vertices(char *linefeed){
@@ -57,24 +62,37 @@ static float* obj_append_vertices(char *linefeed){
 		return coord;		
 }
 
-static void obj_create_vertices(struct obj_vertex **v, float x, float y, float z, int count){
+int obj_add_vertex(struct obj_vertex **v, float *coordinates){
+		struct obj_vertex *root = *v;
+		
+		/* is it the head? */
+		if( root == NULL ){
+			root  = obj_AllocVertex();
+		}
 
-        *v = realloc(*v, (count + 1) * sizeof(struct obj_vertex));
-        (*(v) + count)->x = x;
-        (*(v) + count)->y = y;
-        (*(v) + count)->z = z;
+		root->x = coordinates[0];
+		root->y = coordinates[1];
+		root->z = coordinates[2];
+		root->next = NULL;
 
+		*v = root->next;
 
+		if(*v == NULL){
+			return 0;
+		}
 
+		return 1;
 
 }
+
+
 
 struct obj_model  *obj_loadfile(const char *filename){
 	char line[255];
 	FILE *fp = NULL;
-	struct obj_vertex *v = NULL;
 	struct obj_model *model = NULL;
     float *coord = NULL;
+    struct obj_vertex *vertex = NULL;
 	int vertex_count;
 
 	vertex_count = 0;
@@ -86,12 +104,13 @@ struct obj_model  *obj_loadfile(const char *filename){
 		/*
 			TODO:  adicionar uma exception pro swig
 		*/
+		//SWIG_exception(SWIG_ValueError, "Arquivo nao encontrado");
 		return NULL;
 	}
 
-
-	v = obj_AllocVertex();
 	model = obj_AllocModel();
+	vertex = obj_AllocVertex();
+	
 
     strcpy(model->name, filename);
 
@@ -119,7 +138,9 @@ struct obj_model  *obj_loadfile(const char *filename){
 						/* load v */
 						default:
 							coord = obj_append_vertices(line);
-							obj_create_vertices(&v, coord[0], coord[1], coord[2], vertex_count);
+							obj_add_vertex(&vertex, coord);
+
+							
 							++vertex_count;
 						break;
 					}
@@ -136,8 +157,14 @@ struct obj_model  *obj_loadfile(const char *filename){
 			}	
 
 	}
-    model->vertices = v;
+
+
+	model->vertices = vertex;
 	model->vertices_count = vertex_count;
+
+
+
+
 
 
 	return model;

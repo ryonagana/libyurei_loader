@@ -39,19 +39,21 @@ struct obj_vertex {
 	float x;
 	float y;
 	float z;
+	struct obj_vertex *next;
 };
 
 struct obj_vertex_texure {
 	float x;
 	float y;
 	float z;
+	struct obj_vertex_texture *next;
 };
 
 
 struct obj_model {
 	char name[56];
 	unsigned long vertices_count;
-	struct obj_vertex* vertices;
+	struct obj_vertex *vertices;
 };
 
 
