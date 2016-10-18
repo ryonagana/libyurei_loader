@@ -30,37 +30,35 @@ curve (curv)
 surface (surf)
 
 */
-/* 
+/*
 geometric vertices
 */
 
 
-struct obj_vertex {
+struct model_v {
 	float x;
 	float y;
 	float z;
-	struct obj_vertex *next;
 };
 
-struct obj_vertex_texure {
+struct model_vt {
 	float x;
 	float y;
 	float z;
-	struct obj_vertex_texture *next;
 };
 
-
-struct obj_model {
+struct object_model {
 	char name[56];
-	unsigned long vertices_count;
-	struct obj_vertex *vertices;
+	unsigned long vertex_count;
+	unsigned long textures_count;
+	unsigned long normals_count;
+	struct model_v *vertex;
+	struct model_vt *texture;
 };
 
-
-struct obj_model *obj_loadfile(const char *filename);
-
-
-
+void obj_loader_Init();
+struct object_model* obj_load_model(const char *filename);
+void obj_copy_vertex(struct model_v* dest, struct object_model *orig);
 
 
 #endif

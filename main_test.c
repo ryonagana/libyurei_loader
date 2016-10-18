@@ -1,29 +1,28 @@
 #include "obj_loader.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char *name = "test//model.obj";
 
 int main(int argc, char **argv[]){
+	
+	struct object_model *m;
+	m = obj_load_model(name);
+	int c = 0;
+	struct model_v vertex[m->vertex_count];
+	
+	memcpy(&vertex, m->vertex, sizeof(struct model_v) * m->vertex_count);
+	
 
-	struct obj_model *model = NULL;
-	int i = 0;
+	for(c = 0; c < m->vertex_count;++c){
+		printf("%.6f %.6f %.6f\n", vertex[c].x, vertex[c].y, vertex[c].z);
+	}
+	
+	
+	
 
-	model = obj_loadfile("test//model.obj");
-
-    if(!model){
-        printf("arquivo nao encontrado");
-        exit(0);
-    }
-
-
-    
-    printf("%zd", model->vertices_count);
-
-    while(model->vertices->next != NULL){
-
-        //printf("%f %f %f\n\n", model->vertices->x, model->vertices->y, model->vertices->z);
-        model->vertices = model->vertices->next;
-
-    }
-
- 
+	
 	
 
 	return 0;

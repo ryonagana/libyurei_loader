@@ -2929,9 +2929,9 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_char swig_types[0]
-#define SWIGTYPE_p_obj_model swig_types[1]
-#define SWIGTYPE_p_obj_vertex swig_types[2]
-#define SWIGTYPE_p_obj_vertex_texure swig_types[3]
+#define SWIGTYPE_p_model_v swig_types[1]
+#define SWIGTYPE_p_model_vt swig_types[2]
+#define SWIGTYPE_p_object_model swig_types[3]
 static swig_type_info *swig_types[5];
 static swig_module_info swig_module = {swig_types, 4, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
@@ -2968,14 +2968,11 @@ static swig_module_info swig_module = {swig_types, 4, 0, 0, 0, 0};
 
 
 
-	
+
 #include "../obj_loader.h"
-
-typedef struct obj_vertex obj_vertex;
-typedef struct obj_model obj_model;
-typedef struct obj_vertex_texture obj_vertex_texture;
-obj_model *obj_loadfile(const char *filename);
-
+void obj_loader_Init();
+struct object_model* obj_load_model(const char *filename);	
+	
 
 
 
@@ -3279,9 +3276,9 @@ SWIG_From_unsigned_SS_long  (unsigned long value)
 #ifdef __cplusplus
 extern "C" {
 #endif
-SWIGINTERN PyObject *_wrap_obj_vertex_x_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_v_x_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *arg1 = (struct obj_vertex *) 0 ;
+  struct model_v *arg1 = (struct model_v *) 0 ;
   float arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3290,15 +3287,15 @@ SWIGINTERN PyObject *_wrap_obj_vertex_x_set(PyObject *SWIGUNUSEDPARM(self), PyOb
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_vertex_x_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:model_v_x_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_x_set" "', argument " "1"" of type '" "struct obj_vertex *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_v_x_set" "', argument " "1"" of type '" "struct model_v *""'"); 
   }
-  arg1 = (struct obj_vertex *)(argp1);
+  arg1 = (struct model_v *)(argp1);
   ecode2 = SWIG_AsVal_float(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "obj_vertex_x_set" "', argument " "2"" of type '" "float""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "model_v_x_set" "', argument " "2"" of type '" "float""'");
   } 
   arg2 = (float)(val2);
   if (arg1) (arg1)->x = arg2;
@@ -3309,20 +3306,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_x_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_v_x_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *arg1 = (struct obj_vertex *) 0 ;
+  struct model_v *arg1 = (struct model_v *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   float result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_vertex_x_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:model_v_x_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_x_get" "', argument " "1"" of type '" "struct obj_vertex *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_v_x_get" "', argument " "1"" of type '" "struct model_v *""'"); 
   }
-  arg1 = (struct obj_vertex *)(argp1);
+  arg1 = (struct model_v *)(argp1);
   result = (float) ((arg1)->x);
   resultobj = SWIG_From_float((float)(result));
   return resultobj;
@@ -3331,9 +3328,9 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_y_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_v_y_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *arg1 = (struct obj_vertex *) 0 ;
+  struct model_v *arg1 = (struct model_v *) 0 ;
   float arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3342,15 +3339,15 @@ SWIGINTERN PyObject *_wrap_obj_vertex_y_set(PyObject *SWIGUNUSEDPARM(self), PyOb
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_vertex_y_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:model_v_y_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_y_set" "', argument " "1"" of type '" "struct obj_vertex *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_v_y_set" "', argument " "1"" of type '" "struct model_v *""'"); 
   }
-  arg1 = (struct obj_vertex *)(argp1);
+  arg1 = (struct model_v *)(argp1);
   ecode2 = SWIG_AsVal_float(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "obj_vertex_y_set" "', argument " "2"" of type '" "float""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "model_v_y_set" "', argument " "2"" of type '" "float""'");
   } 
   arg2 = (float)(val2);
   if (arg1) (arg1)->y = arg2;
@@ -3361,20 +3358,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_y_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_v_y_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *arg1 = (struct obj_vertex *) 0 ;
+  struct model_v *arg1 = (struct model_v *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   float result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_vertex_y_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:model_v_y_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_y_get" "', argument " "1"" of type '" "struct obj_vertex *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_v_y_get" "', argument " "1"" of type '" "struct model_v *""'"); 
   }
-  arg1 = (struct obj_vertex *)(argp1);
+  arg1 = (struct model_v *)(argp1);
   result = (float) ((arg1)->y);
   resultobj = SWIG_From_float((float)(result));
   return resultobj;
@@ -3383,9 +3380,9 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_z_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_v_z_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *arg1 = (struct obj_vertex *) 0 ;
+  struct model_v *arg1 = (struct model_v *) 0 ;
   float arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3394,15 +3391,15 @@ SWIGINTERN PyObject *_wrap_obj_vertex_z_set(PyObject *SWIGUNUSEDPARM(self), PyOb
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_vertex_z_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:model_v_z_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_z_set" "', argument " "1"" of type '" "struct obj_vertex *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_v_z_set" "', argument " "1"" of type '" "struct model_v *""'"); 
   }
-  arg1 = (struct obj_vertex *)(argp1);
+  arg1 = (struct model_v *)(argp1);
   ecode2 = SWIG_AsVal_float(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "obj_vertex_z_set" "', argument " "2"" of type '" "float""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "model_v_z_set" "', argument " "2"" of type '" "float""'");
   } 
   arg2 = (float)(val2);
   if (arg1) (arg1)->z = arg2;
@@ -3413,20 +3410,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_z_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_v_z_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *arg1 = (struct obj_vertex *) 0 ;
+  struct model_v *arg1 = (struct model_v *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   float result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_vertex_z_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:model_v_z_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_z_get" "', argument " "1"" of type '" "struct obj_vertex *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_v_z_get" "', argument " "1"" of type '" "struct model_v *""'"); 
   }
-  arg1 = (struct obj_vertex *)(argp1);
+  arg1 = (struct model_v *)(argp1);
   result = (float) ((arg1)->z);
   resultobj = SWIG_From_float((float)(result));
   return resultobj;
@@ -3435,32 +3432,32 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_obj_vertex(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_new_model_v(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *result = 0 ;
+  struct model_v *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)":new_obj_vertex")) SWIG_fail;
-  result = (struct obj_vertex *)calloc(1, sizeof(struct obj_vertex));
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_obj_vertex, SWIG_POINTER_NEW |  0 );
+  if (!PyArg_ParseTuple(args,(char *)":new_model_v")) SWIG_fail;
+  result = (struct model_v *)calloc(1, sizeof(struct model_v));
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_model_v, SWIG_POINTER_NEW |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_delete_obj_vertex(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_delete_model_v(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex *arg1 = (struct obj_vertex *) 0 ;
+  struct model_v *arg1 = (struct model_v *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_obj_vertex",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex, SWIG_POINTER_DISOWN |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_model_v",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_obj_vertex" "', argument " "1"" of type '" "struct obj_vertex *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_model_v" "', argument " "1"" of type '" "struct model_v *""'"); 
   }
-  arg1 = (struct obj_vertex *)(argp1);
+  arg1 = (struct model_v *)(argp1);
   free((char *) arg1);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -3469,16 +3466,16 @@ fail:
 }
 
 
-SWIGINTERN PyObject *obj_vertex_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *model_v_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_obj_vertex, SWIG_NewClientData(obj));
+  SWIG_TypeNewClientData(SWIGTYPE_p_model_v, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_obj_vertex_texure_x_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_vt_x_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *arg1 = (struct obj_vertex_texure *) 0 ;
+  struct model_vt *arg1 = (struct model_vt *) 0 ;
   float arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3487,15 +3484,15 @@ SWIGINTERN PyObject *_wrap_obj_vertex_texure_x_set(PyObject *SWIGUNUSEDPARM(self
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_vertex_texure_x_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex_texure, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:model_vt_x_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_vt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_texure_x_set" "', argument " "1"" of type '" "struct obj_vertex_texure *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_vt_x_set" "', argument " "1"" of type '" "struct model_vt *""'"); 
   }
-  arg1 = (struct obj_vertex_texure *)(argp1);
+  arg1 = (struct model_vt *)(argp1);
   ecode2 = SWIG_AsVal_float(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "obj_vertex_texure_x_set" "', argument " "2"" of type '" "float""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "model_vt_x_set" "', argument " "2"" of type '" "float""'");
   } 
   arg2 = (float)(val2);
   if (arg1) (arg1)->x = arg2;
@@ -3506,20 +3503,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_texure_x_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_vt_x_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *arg1 = (struct obj_vertex_texure *) 0 ;
+  struct model_vt *arg1 = (struct model_vt *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   float result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_vertex_texure_x_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex_texure, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:model_vt_x_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_vt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_texure_x_get" "', argument " "1"" of type '" "struct obj_vertex_texure *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_vt_x_get" "', argument " "1"" of type '" "struct model_vt *""'"); 
   }
-  arg1 = (struct obj_vertex_texure *)(argp1);
+  arg1 = (struct model_vt *)(argp1);
   result = (float) ((arg1)->x);
   resultobj = SWIG_From_float((float)(result));
   return resultobj;
@@ -3528,9 +3525,9 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_texure_y_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_vt_y_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *arg1 = (struct obj_vertex_texure *) 0 ;
+  struct model_vt *arg1 = (struct model_vt *) 0 ;
   float arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3539,15 +3536,15 @@ SWIGINTERN PyObject *_wrap_obj_vertex_texure_y_set(PyObject *SWIGUNUSEDPARM(self
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_vertex_texure_y_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex_texure, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:model_vt_y_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_vt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_texure_y_set" "', argument " "1"" of type '" "struct obj_vertex_texure *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_vt_y_set" "', argument " "1"" of type '" "struct model_vt *""'"); 
   }
-  arg1 = (struct obj_vertex_texure *)(argp1);
+  arg1 = (struct model_vt *)(argp1);
   ecode2 = SWIG_AsVal_float(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "obj_vertex_texure_y_set" "', argument " "2"" of type '" "float""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "model_vt_y_set" "', argument " "2"" of type '" "float""'");
   } 
   arg2 = (float)(val2);
   if (arg1) (arg1)->y = arg2;
@@ -3558,20 +3555,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_texure_y_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_vt_y_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *arg1 = (struct obj_vertex_texure *) 0 ;
+  struct model_vt *arg1 = (struct model_vt *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   float result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_vertex_texure_y_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex_texure, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:model_vt_y_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_vt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_texure_y_get" "', argument " "1"" of type '" "struct obj_vertex_texure *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_vt_y_get" "', argument " "1"" of type '" "struct model_vt *""'"); 
   }
-  arg1 = (struct obj_vertex_texure *)(argp1);
+  arg1 = (struct model_vt *)(argp1);
   result = (float) ((arg1)->y);
   resultobj = SWIG_From_float((float)(result));
   return resultobj;
@@ -3580,9 +3577,9 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_texure_z_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_vt_z_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *arg1 = (struct obj_vertex_texure *) 0 ;
+  struct model_vt *arg1 = (struct model_vt *) 0 ;
   float arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3591,15 +3588,15 @@ SWIGINTERN PyObject *_wrap_obj_vertex_texure_z_set(PyObject *SWIGUNUSEDPARM(self
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_vertex_texure_z_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex_texure, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:model_vt_z_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_vt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_texure_z_set" "', argument " "1"" of type '" "struct obj_vertex_texure *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_vt_z_set" "', argument " "1"" of type '" "struct model_vt *""'"); 
   }
-  arg1 = (struct obj_vertex_texure *)(argp1);
+  arg1 = (struct model_vt *)(argp1);
   ecode2 = SWIG_AsVal_float(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "obj_vertex_texure_z_set" "', argument " "2"" of type '" "float""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "model_vt_z_set" "', argument " "2"" of type '" "float""'");
   } 
   arg2 = (float)(val2);
   if (arg1) (arg1)->z = arg2;
@@ -3610,20 +3607,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_vertex_texure_z_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_model_vt_z_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *arg1 = (struct obj_vertex_texure *) 0 ;
+  struct model_vt *arg1 = (struct model_vt *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   float result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_vertex_texure_z_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex_texure, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:model_vt_z_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_vt, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_vertex_texure_z_get" "', argument " "1"" of type '" "struct obj_vertex_texure *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "model_vt_z_get" "', argument " "1"" of type '" "struct model_vt *""'"); 
   }
-  arg1 = (struct obj_vertex_texure *)(argp1);
+  arg1 = (struct model_vt *)(argp1);
   result = (float) ((arg1)->z);
   resultobj = SWIG_From_float((float)(result));
   return resultobj;
@@ -3632,32 +3629,32 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_obj_vertex_texure(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_new_model_vt(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *result = 0 ;
+  struct model_vt *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)":new_obj_vertex_texure")) SWIG_fail;
-  result = (struct obj_vertex_texure *)calloc(1, sizeof(struct obj_vertex_texure));
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_obj_vertex_texure, SWIG_POINTER_NEW |  0 );
+  if (!PyArg_ParseTuple(args,(char *)":new_model_vt")) SWIG_fail;
+  result = (struct model_vt *)calloc(1, sizeof(struct model_vt));
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_model_vt, SWIG_POINTER_NEW |  0 );
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_delete_obj_vertex_texure(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_delete_model_vt(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_vertex_texure *arg1 = (struct obj_vertex_texure *) 0 ;
+  struct model_vt *arg1 = (struct model_vt *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_obj_vertex_texure",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_vertex_texure, SWIG_POINTER_DISOWN |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_model_vt",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_vt, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_obj_vertex_texure" "', argument " "1"" of type '" "struct obj_vertex_texure *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_model_vt" "', argument " "1"" of type '" "struct model_vt *""'"); 
   }
-  arg1 = (struct obj_vertex_texure *)(argp1);
+  arg1 = (struct model_vt *)(argp1);
   free((char *) arg1);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -3666,16 +3663,16 @@ fail:
 }
 
 
-SWIGINTERN PyObject *obj_vertex_texure_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *model_vt_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_obj_vertex_texure, SWIG_NewClientData(obj));
+  SWIG_TypeNewClientData(SWIGTYPE_p_model_vt, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_obj_model_name_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_name_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *arg1 = (struct obj_model *) 0 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
   char *arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3684,15 +3681,15 @@ SWIGINTERN PyObject *_wrap_obj_model_name_set(PyObject *SWIGUNUSEDPARM(self), Py
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_model_name_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_model, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:object_model_name_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_model_name_set" "', argument " "1"" of type '" "struct obj_model *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_name_set" "', argument " "1"" of type '" "struct object_model *""'"); 
   }
-  arg1 = (struct obj_model *)(argp1);
+  arg1 = (struct object_model *)(argp1);
   res2 = SWIG_AsCharArray(obj1, temp2, 56);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "obj_model_name_set" "', argument " "2"" of type '" "char [56]""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "object_model_name_set" "', argument " "2"" of type '" "char [56]""'");
   }
   arg2 = (char *)(temp2);
   if (arg2) memcpy(arg1->name,arg2,56*sizeof(char));
@@ -3704,20 +3701,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_model_name_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_name_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *arg1 = (struct obj_model *) 0 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   char *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_model_name_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_model, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:object_model_name_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_model_name_get" "', argument " "1"" of type '" "struct obj_model *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_name_get" "', argument " "1"" of type '" "struct object_model *""'"); 
   }
-  arg1 = (struct obj_model *)(argp1);
+  arg1 = (struct object_model *)(argp1);
   result = (char *)(char *) ((arg1)->name);
   {
     size_t size = 56;
@@ -3732,9 +3729,9 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_model_vertices_count_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_vertex_count_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *arg1 = (struct obj_model *) 0 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
   unsigned long arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3743,18 +3740,18 @@ SWIGINTERN PyObject *_wrap_obj_model_vertices_count_set(PyObject *SWIGUNUSEDPARM
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_model_vertices_count_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_model, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:object_model_vertex_count_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_model_vertices_count_set" "', argument " "1"" of type '" "struct obj_model *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_vertex_count_set" "', argument " "1"" of type '" "struct object_model *""'"); 
   }
-  arg1 = (struct obj_model *)(argp1);
+  arg1 = (struct object_model *)(argp1);
   ecode2 = SWIG_AsVal_unsigned_SS_long(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "obj_model_vertices_count_set" "', argument " "2"" of type '" "unsigned long""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "object_model_vertex_count_set" "', argument " "2"" of type '" "unsigned long""'");
   } 
   arg2 = (unsigned long)(val2);
-  if (arg1) (arg1)->vertices_count = arg2;
+  if (arg1) (arg1)->vertex_count = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -3762,21 +3759,21 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_model_vertices_count_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_vertex_count_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *arg1 = (struct obj_model *) 0 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   unsigned long result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_model_vertices_count_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_model, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:object_model_vertex_count_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_model_vertices_count_get" "', argument " "1"" of type '" "struct obj_model *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_vertex_count_get" "', argument " "1"" of type '" "struct object_model *""'"); 
   }
-  arg1 = (struct obj_model *)(argp1);
-  result = (unsigned long) ((arg1)->vertices_count);
+  arg1 = (struct object_model *)(argp1);
+  result = (unsigned long) ((arg1)->vertex_count);
   resultobj = SWIG_From_unsigned_SS_long((unsigned long)(result));
   return resultobj;
 fail:
@@ -3784,36 +3781,29 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_model_vertices_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_textures_count_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *arg1 = (struct obj_model *) 0 ;
-  struct obj_vertex *arg2 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
+  unsigned long arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
+  unsigned long val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:obj_model_vertices_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_model, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:object_model_textures_count_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_model_vertices_set" "', argument " "1"" of type '" "struct obj_model *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_textures_count_set" "', argument " "1"" of type '" "struct object_model *""'"); 
   }
-  arg1 = (struct obj_model *)(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_obj_vertex, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "obj_model_vertices_set" "', argument " "2"" of type '" "struct obj_vertex [10]""'"); 
+  arg1 = (struct object_model *)(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_long(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "object_model_textures_count_set" "', argument " "2"" of type '" "unsigned long""'");
   } 
-  arg2 = (struct obj_vertex *)(argp2);
-  {
-    if (arg2) {
-      size_t ii = 0;
-      for (; ii < (size_t)10; ++ii) arg1->vertices[ii] = arg2[ii];
-    } else {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""vertices""' of type '""struct obj_vertex [10]""'");
-    }
-  }
+  arg2 = (unsigned long)(val2);
+  if (arg1) (arg1)->textures_count = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -3821,54 +3811,210 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_obj_model_vertices_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_textures_count_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *arg1 = (struct obj_model *) 0 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  struct obj_vertex *result = 0 ;
+  unsigned long result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_model_vertices_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_model, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:object_model_textures_count_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_model_vertices_get" "', argument " "1"" of type '" "struct obj_model *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_textures_count_get" "', argument " "1"" of type '" "struct object_model *""'"); 
   }
-  arg1 = (struct obj_model *)(argp1);
-  result = (struct obj_vertex *)(struct obj_vertex *) ((arg1)->vertices);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_obj_vertex, 0 |  0 );
+  arg1 = (struct object_model *)(argp1);
+  result = (unsigned long) ((arg1)->textures_count);
+  resultobj = SWIG_From_unsigned_SS_long((unsigned long)(result));
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_new_obj_model(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_normals_count_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *result = 0 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
+  unsigned long arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned long val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)":new_obj_model")) SWIG_fail;
-  result = (struct obj_model *)calloc(1, sizeof(struct obj_model));
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_obj_model, SWIG_POINTER_NEW |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:object_model_normals_count_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_normals_count_set" "', argument " "1"" of type '" "struct object_model *""'"); 
+  }
+  arg1 = (struct object_model *)(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_long(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "object_model_normals_count_set" "', argument " "2"" of type '" "unsigned long""'");
+  } 
+  arg2 = (unsigned long)(val2);
+  if (arg1) (arg1)->normals_count = arg2;
+  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_delete_obj_model(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_object_model_normals_count_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  struct obj_model *arg1 = (struct obj_model *) 0 ;
+  struct object_model *arg1 = (struct object_model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned long result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:object_model_normals_count_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_normals_count_get" "', argument " "1"" of type '" "struct object_model *""'"); 
+  }
+  arg1 = (struct object_model *)(argp1);
+  result = (unsigned long) ((arg1)->normals_count);
+  resultobj = SWIG_From_unsigned_SS_long((unsigned long)(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_object_model_vertex_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct object_model *arg1 = (struct object_model *) 0 ;
+  struct model_v *arg2 = (struct model_v *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:object_model_vertex_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_vertex_set" "', argument " "1"" of type '" "struct object_model *""'"); 
+  }
+  arg1 = (struct object_model *)(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_model_v, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "object_model_vertex_set" "', argument " "2"" of type '" "struct model_v *""'"); 
+  }
+  arg2 = (struct model_v *)(argp2);
+  if (arg1) (arg1)->vertex = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_object_model_vertex_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct object_model *arg1 = (struct object_model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  struct model_v *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:object_model_vertex_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_vertex_get" "', argument " "1"" of type '" "struct object_model *""'"); 
+  }
+  arg1 = (struct object_model *)(argp1);
+  result = (struct model_v *) ((arg1)->vertex);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_model_v, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_object_model_texture_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct object_model *arg1 = (struct object_model *) 0 ;
+  struct model_vt *arg2 = (struct model_vt *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:object_model_texture_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_texture_set" "', argument " "1"" of type '" "struct object_model *""'"); 
+  }
+  arg1 = (struct object_model *)(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_model_vt, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "object_model_texture_set" "', argument " "2"" of type '" "struct model_vt *""'"); 
+  }
+  arg2 = (struct model_vt *)(argp2);
+  if (arg1) (arg1)->texture = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_object_model_texture_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct object_model *arg1 = (struct object_model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  struct model_vt *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:object_model_texture_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "object_model_texture_get" "', argument " "1"" of type '" "struct object_model *""'"); 
+  }
+  arg1 = (struct object_model *)(argp1);
+  result = (struct model_vt *) ((arg1)->texture);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_model_vt, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_object_model(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct object_model *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_object_model")) SWIG_fail;
+  result = (struct object_model *)calloc(1, sizeof(struct object_model));
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_object_model, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_object_model(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct object_model *arg1 = (struct object_model *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_obj_model",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_obj_model, SWIG_POINTER_DISOWN |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_object_model",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_object_model, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_obj_model" "', argument " "1"" of type '" "struct obj_model *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_object_model" "', argument " "1"" of type '" "struct object_model *""'"); 
   }
-  arg1 = (struct obj_model *)(argp1);
+  arg1 = (struct object_model *)(argp1);
   free((char *) arg1);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -3877,30 +4023,42 @@ fail:
 }
 
 
-SWIGINTERN PyObject *obj_model_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *object_model_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_obj_model, SWIG_NewClientData(obj));
+  SWIG_TypeNewClientData(SWIGTYPE_p_object_model, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_obj_loadfile(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_obj_loader_Init(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  
+  if (!PyArg_ParseTuple(args,(char *)":obj_loader_Init")) SWIG_fail;
+  obj_loader_Init();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_obj_load_model(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
   int alloc1 = 0 ;
   PyObject * obj0 = 0 ;
-  struct obj_model *result = 0 ;
+  struct object_model *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:obj_loadfile",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:obj_load_model",&obj0)) SWIG_fail;
   res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_loadfile" "', argument " "1"" of type '" "char const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_load_model" "', argument " "1"" of type '" "char const *""'");
   }
   arg1 = (char *)(buf1);
-  result = (struct obj_model *)obj_loadfile((char const *)arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_obj_model, 0 |  0 );
+  result = (struct object_model *)obj_load_model((char const *)arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_object_model, 0 |  0 );
   if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
   return resultobj;
 fail:
@@ -3909,36 +4067,74 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_obj_copy_vertex(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct model_v *arg1 = (struct model_v *) 0 ;
+  struct object_model *arg2 = (struct object_model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:obj_copy_vertex",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_model_v, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "obj_copy_vertex" "', argument " "1"" of type '" "struct model_v *""'"); 
+  }
+  arg1 = (struct model_v *)(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_object_model, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "obj_copy_vertex" "', argument " "2"" of type '" "struct object_model *""'"); 
+  }
+  arg2 = (struct object_model *)(argp2);
+  obj_copy_vertex(arg1,arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
-	 { (char *)"obj_vertex_x_set", _wrap_obj_vertex_x_set, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_x_get", _wrap_obj_vertex_x_get, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_y_set", _wrap_obj_vertex_y_set, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_y_get", _wrap_obj_vertex_y_get, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_z_set", _wrap_obj_vertex_z_set, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_z_get", _wrap_obj_vertex_z_get, METH_VARARGS, NULL},
-	 { (char *)"new_obj_vertex", _wrap_new_obj_vertex, METH_VARARGS, NULL},
-	 { (char *)"delete_obj_vertex", _wrap_delete_obj_vertex, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_swigregister", obj_vertex_swigregister, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_texure_x_set", _wrap_obj_vertex_texure_x_set, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_texure_x_get", _wrap_obj_vertex_texure_x_get, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_texure_y_set", _wrap_obj_vertex_texure_y_set, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_texure_y_get", _wrap_obj_vertex_texure_y_get, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_texure_z_set", _wrap_obj_vertex_texure_z_set, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_texure_z_get", _wrap_obj_vertex_texure_z_get, METH_VARARGS, NULL},
-	 { (char *)"new_obj_vertex_texure", _wrap_new_obj_vertex_texure, METH_VARARGS, NULL},
-	 { (char *)"delete_obj_vertex_texure", _wrap_delete_obj_vertex_texure, METH_VARARGS, NULL},
-	 { (char *)"obj_vertex_texure_swigregister", obj_vertex_texure_swigregister, METH_VARARGS, NULL},
-	 { (char *)"obj_model_name_set", _wrap_obj_model_name_set, METH_VARARGS, NULL},
-	 { (char *)"obj_model_name_get", _wrap_obj_model_name_get, METH_VARARGS, NULL},
-	 { (char *)"obj_model_vertices_count_set", _wrap_obj_model_vertices_count_set, METH_VARARGS, NULL},
-	 { (char *)"obj_model_vertices_count_get", _wrap_obj_model_vertices_count_get, METH_VARARGS, NULL},
-	 { (char *)"obj_model_vertices_set", _wrap_obj_model_vertices_set, METH_VARARGS, NULL},
-	 { (char *)"obj_model_vertices_get", _wrap_obj_model_vertices_get, METH_VARARGS, NULL},
-	 { (char *)"new_obj_model", _wrap_new_obj_model, METH_VARARGS, NULL},
-	 { (char *)"delete_obj_model", _wrap_delete_obj_model, METH_VARARGS, NULL},
-	 { (char *)"obj_model_swigregister", obj_model_swigregister, METH_VARARGS, NULL},
-	 { (char *)"obj_loadfile", _wrap_obj_loadfile, METH_VARARGS, NULL},
+	 { (char *)"model_v_x_set", _wrap_model_v_x_set, METH_VARARGS, NULL},
+	 { (char *)"model_v_x_get", _wrap_model_v_x_get, METH_VARARGS, NULL},
+	 { (char *)"model_v_y_set", _wrap_model_v_y_set, METH_VARARGS, NULL},
+	 { (char *)"model_v_y_get", _wrap_model_v_y_get, METH_VARARGS, NULL},
+	 { (char *)"model_v_z_set", _wrap_model_v_z_set, METH_VARARGS, NULL},
+	 { (char *)"model_v_z_get", _wrap_model_v_z_get, METH_VARARGS, NULL},
+	 { (char *)"new_model_v", _wrap_new_model_v, METH_VARARGS, NULL},
+	 { (char *)"delete_model_v", _wrap_delete_model_v, METH_VARARGS, NULL},
+	 { (char *)"model_v_swigregister", model_v_swigregister, METH_VARARGS, NULL},
+	 { (char *)"model_vt_x_set", _wrap_model_vt_x_set, METH_VARARGS, NULL},
+	 { (char *)"model_vt_x_get", _wrap_model_vt_x_get, METH_VARARGS, NULL},
+	 { (char *)"model_vt_y_set", _wrap_model_vt_y_set, METH_VARARGS, NULL},
+	 { (char *)"model_vt_y_get", _wrap_model_vt_y_get, METH_VARARGS, NULL},
+	 { (char *)"model_vt_z_set", _wrap_model_vt_z_set, METH_VARARGS, NULL},
+	 { (char *)"model_vt_z_get", _wrap_model_vt_z_get, METH_VARARGS, NULL},
+	 { (char *)"new_model_vt", _wrap_new_model_vt, METH_VARARGS, NULL},
+	 { (char *)"delete_model_vt", _wrap_delete_model_vt, METH_VARARGS, NULL},
+	 { (char *)"model_vt_swigregister", model_vt_swigregister, METH_VARARGS, NULL},
+	 { (char *)"object_model_name_set", _wrap_object_model_name_set, METH_VARARGS, NULL},
+	 { (char *)"object_model_name_get", _wrap_object_model_name_get, METH_VARARGS, NULL},
+	 { (char *)"object_model_vertex_count_set", _wrap_object_model_vertex_count_set, METH_VARARGS, NULL},
+	 { (char *)"object_model_vertex_count_get", _wrap_object_model_vertex_count_get, METH_VARARGS, NULL},
+	 { (char *)"object_model_textures_count_set", _wrap_object_model_textures_count_set, METH_VARARGS, NULL},
+	 { (char *)"object_model_textures_count_get", _wrap_object_model_textures_count_get, METH_VARARGS, NULL},
+	 { (char *)"object_model_normals_count_set", _wrap_object_model_normals_count_set, METH_VARARGS, NULL},
+	 { (char *)"object_model_normals_count_get", _wrap_object_model_normals_count_get, METH_VARARGS, NULL},
+	 { (char *)"object_model_vertex_set", _wrap_object_model_vertex_set, METH_VARARGS, NULL},
+	 { (char *)"object_model_vertex_get", _wrap_object_model_vertex_get, METH_VARARGS, NULL},
+	 { (char *)"object_model_texture_set", _wrap_object_model_texture_set, METH_VARARGS, NULL},
+	 { (char *)"object_model_texture_get", _wrap_object_model_texture_get, METH_VARARGS, NULL},
+	 { (char *)"new_object_model", _wrap_new_object_model, METH_VARARGS, NULL},
+	 { (char *)"delete_object_model", _wrap_delete_object_model, METH_VARARGS, NULL},
+	 { (char *)"object_model_swigregister", object_model_swigregister, METH_VARARGS, NULL},
+	 { (char *)"obj_loader_Init", _wrap_obj_loader_Init, METH_VARARGS, NULL},
+	 { (char *)"obj_load_model", _wrap_obj_load_model, METH_VARARGS, NULL},
+	 { (char *)"obj_copy_vertex", _wrap_obj_copy_vertex, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -3946,27 +4142,27 @@ static PyMethodDef SwigMethods[] = {
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_obj_model = {"_p_obj_model", "struct obj_model *|obj_model *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_obj_vertex = {"_p_obj_vertex", "struct obj_vertex *|obj_vertex *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_obj_vertex_texure = {"_p_obj_vertex_texure", "struct obj_vertex_texure *|obj_vertex_texure *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_model_v = {"_p_model_v", "struct model_v *|model_v *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_model_vt = {"_p_model_vt", "struct model_vt *|model_vt *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_object_model = {"_p_object_model", "struct object_model *|object_model *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_char,
-  &_swigt__p_obj_model,
-  &_swigt__p_obj_vertex,
-  &_swigt__p_obj_vertex_texure,
+  &_swigt__p_model_v,
+  &_swigt__p_model_vt,
+  &_swigt__p_object_model,
 };
 
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_obj_model[] = {  {&_swigt__p_obj_model, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_obj_vertex[] = {  {&_swigt__p_obj_vertex, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_obj_vertex_texure[] = {  {&_swigt__p_obj_vertex_texure, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_model_v[] = {  {&_swigt__p_model_v, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_model_vt[] = {  {&_swigt__p_model_vt, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_object_model[] = {  {&_swigt__p_object_model, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_char,
-  _swigc__p_obj_model,
-  _swigc__p_obj_vertex,
-  _swigc__p_obj_vertex_texure,
+  _swigc__p_model_v,
+  _swigc__p_model_vt,
+  _swigc__p_object_model,
 };
 
 

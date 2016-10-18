@@ -67,82 +67,99 @@ except AttributeError:
     _newclass = 0
 
 
-class obj_vertex(_object):
+class model_v(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, obj_vertex, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, model_v, name, value)
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, obj_vertex, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, model_v, name)
     __repr__ = _swig_repr
-    __swig_setmethods__["x"] = _libyurei_loader.obj_vertex_x_set
-    __swig_getmethods__["x"] = _libyurei_loader.obj_vertex_x_get
-    if _newclass:x = _swig_property(_libyurei_loader.obj_vertex_x_get, _libyurei_loader.obj_vertex_x_set)
-    __swig_setmethods__["y"] = _libyurei_loader.obj_vertex_y_set
-    __swig_getmethods__["y"] = _libyurei_loader.obj_vertex_y_get
-    if _newclass:y = _swig_property(_libyurei_loader.obj_vertex_y_get, _libyurei_loader.obj_vertex_y_set)
-    __swig_setmethods__["z"] = _libyurei_loader.obj_vertex_z_set
-    __swig_getmethods__["z"] = _libyurei_loader.obj_vertex_z_get
-    if _newclass:z = _swig_property(_libyurei_loader.obj_vertex_z_get, _libyurei_loader.obj_vertex_z_set)
+    __swig_setmethods__["x"] = _libyurei_loader.model_v_x_set
+    __swig_getmethods__["x"] = _libyurei_loader.model_v_x_get
+    if _newclass:x = _swig_property(_libyurei_loader.model_v_x_get, _libyurei_loader.model_v_x_set)
+    __swig_setmethods__["y"] = _libyurei_loader.model_v_y_set
+    __swig_getmethods__["y"] = _libyurei_loader.model_v_y_get
+    if _newclass:y = _swig_property(_libyurei_loader.model_v_y_get, _libyurei_loader.model_v_y_set)
+    __swig_setmethods__["z"] = _libyurei_loader.model_v_z_set
+    __swig_getmethods__["z"] = _libyurei_loader.model_v_z_get
+    if _newclass:z = _swig_property(_libyurei_loader.model_v_z_get, _libyurei_loader.model_v_z_set)
     def __init__(self): 
-        this = _libyurei_loader.new_obj_vertex()
+        this = _libyurei_loader.new_model_v()
         try: self.this.append(this)
         except: self.this = this
-    __swig_destroy__ = _libyurei_loader.delete_obj_vertex
+    __swig_destroy__ = _libyurei_loader.delete_model_v
     __del__ = lambda self : None;
-obj_vertex_swigregister = _libyurei_loader.obj_vertex_swigregister
-obj_vertex_swigregister(obj_vertex)
+model_v_swigregister = _libyurei_loader.model_v_swigregister
+model_v_swigregister(model_v)
 
-class obj_vertex_texure(_object):
+class model_vt(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, obj_vertex_texure, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, model_vt, name, value)
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, obj_vertex_texure, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, model_vt, name)
     __repr__ = _swig_repr
-    __swig_setmethods__["x"] = _libyurei_loader.obj_vertex_texure_x_set
-    __swig_getmethods__["x"] = _libyurei_loader.obj_vertex_texure_x_get
-    if _newclass:x = _swig_property(_libyurei_loader.obj_vertex_texure_x_get, _libyurei_loader.obj_vertex_texure_x_set)
-    __swig_setmethods__["y"] = _libyurei_loader.obj_vertex_texure_y_set
-    __swig_getmethods__["y"] = _libyurei_loader.obj_vertex_texure_y_get
-    if _newclass:y = _swig_property(_libyurei_loader.obj_vertex_texure_y_get, _libyurei_loader.obj_vertex_texure_y_set)
-    __swig_setmethods__["z"] = _libyurei_loader.obj_vertex_texure_z_set
-    __swig_getmethods__["z"] = _libyurei_loader.obj_vertex_texure_z_get
-    if _newclass:z = _swig_property(_libyurei_loader.obj_vertex_texure_z_get, _libyurei_loader.obj_vertex_texure_z_set)
+    __swig_setmethods__["x"] = _libyurei_loader.model_vt_x_set
+    __swig_getmethods__["x"] = _libyurei_loader.model_vt_x_get
+    if _newclass:x = _swig_property(_libyurei_loader.model_vt_x_get, _libyurei_loader.model_vt_x_set)
+    __swig_setmethods__["y"] = _libyurei_loader.model_vt_y_set
+    __swig_getmethods__["y"] = _libyurei_loader.model_vt_y_get
+    if _newclass:y = _swig_property(_libyurei_loader.model_vt_y_get, _libyurei_loader.model_vt_y_set)
+    __swig_setmethods__["z"] = _libyurei_loader.model_vt_z_set
+    __swig_getmethods__["z"] = _libyurei_loader.model_vt_z_get
+    if _newclass:z = _swig_property(_libyurei_loader.model_vt_z_get, _libyurei_loader.model_vt_z_set)
     def __init__(self): 
-        this = _libyurei_loader.new_obj_vertex_texure()
+        this = _libyurei_loader.new_model_vt()
         try: self.this.append(this)
         except: self.this = this
-    __swig_destroy__ = _libyurei_loader.delete_obj_vertex_texure
+    __swig_destroy__ = _libyurei_loader.delete_model_vt
     __del__ = lambda self : None;
-obj_vertex_texure_swigregister = _libyurei_loader.obj_vertex_texure_swigregister
-obj_vertex_texure_swigregister(obj_vertex_texure)
+model_vt_swigregister = _libyurei_loader.model_vt_swigregister
+model_vt_swigregister(model_vt)
 
-class obj_model(_object):
+class object_model(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, obj_model, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, object_model, name, value)
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, obj_model, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, object_model, name)
     __repr__ = _swig_repr
-    __swig_setmethods__["name"] = _libyurei_loader.obj_model_name_set
-    __swig_getmethods__["name"] = _libyurei_loader.obj_model_name_get
-    if _newclass:name = _swig_property(_libyurei_loader.obj_model_name_get, _libyurei_loader.obj_model_name_set)
-    __swig_setmethods__["vertices_count"] = _libyurei_loader.obj_model_vertices_count_set
-    __swig_getmethods__["vertices_count"] = _libyurei_loader.obj_model_vertices_count_get
-    if _newclass:vertices_count = _swig_property(_libyurei_loader.obj_model_vertices_count_get, _libyurei_loader.obj_model_vertices_count_set)
-    __swig_setmethods__["vertices"] = _libyurei_loader.obj_model_vertices_set
-    __swig_getmethods__["vertices"] = _libyurei_loader.obj_model_vertices_get
-    if _newclass:vertices = _swig_property(_libyurei_loader.obj_model_vertices_get, _libyurei_loader.obj_model_vertices_set)
+    __swig_setmethods__["name"] = _libyurei_loader.object_model_name_set
+    __swig_getmethods__["name"] = _libyurei_loader.object_model_name_get
+    if _newclass:name = _swig_property(_libyurei_loader.object_model_name_get, _libyurei_loader.object_model_name_set)
+    __swig_setmethods__["vertex_count"] = _libyurei_loader.object_model_vertex_count_set
+    __swig_getmethods__["vertex_count"] = _libyurei_loader.object_model_vertex_count_get
+    if _newclass:vertex_count = _swig_property(_libyurei_loader.object_model_vertex_count_get, _libyurei_loader.object_model_vertex_count_set)
+    __swig_setmethods__["textures_count"] = _libyurei_loader.object_model_textures_count_set
+    __swig_getmethods__["textures_count"] = _libyurei_loader.object_model_textures_count_get
+    if _newclass:textures_count = _swig_property(_libyurei_loader.object_model_textures_count_get, _libyurei_loader.object_model_textures_count_set)
+    __swig_setmethods__["normals_count"] = _libyurei_loader.object_model_normals_count_set
+    __swig_getmethods__["normals_count"] = _libyurei_loader.object_model_normals_count_get
+    if _newclass:normals_count = _swig_property(_libyurei_loader.object_model_normals_count_get, _libyurei_loader.object_model_normals_count_set)
+    __swig_setmethods__["vertex"] = _libyurei_loader.object_model_vertex_set
+    __swig_getmethods__["vertex"] = _libyurei_loader.object_model_vertex_get
+    if _newclass:vertex = _swig_property(_libyurei_loader.object_model_vertex_get, _libyurei_loader.object_model_vertex_set)
+    __swig_setmethods__["texture"] = _libyurei_loader.object_model_texture_set
+    __swig_getmethods__["texture"] = _libyurei_loader.object_model_texture_get
+    if _newclass:texture = _swig_property(_libyurei_loader.object_model_texture_get, _libyurei_loader.object_model_texture_set)
     def __init__(self): 
-        this = _libyurei_loader.new_obj_model()
+        this = _libyurei_loader.new_object_model()
         try: self.this.append(this)
         except: self.this = this
-    __swig_destroy__ = _libyurei_loader.delete_obj_model
+    __swig_destroy__ = _libyurei_loader.delete_object_model
     __del__ = lambda self : None;
-obj_model_swigregister = _libyurei_loader.obj_model_swigregister
-obj_model_swigregister(obj_model)
+object_model_swigregister = _libyurei_loader.object_model_swigregister
+object_model_swigregister(object_model)
 
 
-def obj_loadfile(*args) -> "struct obj_model *" :
-  return _libyurei_loader.obj_loadfile(*args)
-obj_loadfile = _libyurei_loader.obj_loadfile
+def obj_loader_Init() -> "void" :
+  return _libyurei_loader.obj_loader_Init()
+obj_loader_Init = _libyurei_loader.obj_loader_Init
+
+def obj_load_model(*args) -> "struct object_model *" :
+  return _libyurei_loader.obj_load_model(*args)
+obj_load_model = _libyurei_loader.obj_load_model
+
+def obj_copy_vertex(*args) -> "void" :
+  return _libyurei_loader.obj_copy_vertex(*args)
+obj_copy_vertex = _libyurei_loader.obj_copy_vertex
 # This file is compatible with both classic and new-style classes.
 
 
