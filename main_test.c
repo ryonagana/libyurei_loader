@@ -15,9 +15,12 @@ int main(int argc, char **argv[]){
 	memcpy(&vertex, m->vertex, sizeof(struct model_v) * m->vertex_count);
 	
 
+
+	/*
 	for(c = 0; c < m->vertex_count;++c){
 		printf("%.6f %.6f %.6f\n", vertex[c].x, vertex[c].y, vertex[c].z);
 	}
+	*/
 	
 	
 	

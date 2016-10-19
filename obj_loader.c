@@ -48,6 +48,8 @@ static float* split_coord(char *linefeed){
 		data = strtok(NULL, " ");
 		++c;
 	}
+
+	free(data);
 	return coord;		
 }
 
@@ -56,7 +58,9 @@ struct object_model* obj_load_model(const char *filename){
 
 	float *coordinates = NULL;
 	long line_count  = 0;
+	long vt_count = 0;
 	struct model_v *tmp_vertex = NULL;
+	struct model_vt *tmp_texture = NULL;
 	
 	obj_loader_Init();
 	
@@ -84,6 +88,18 @@ struct object_model* obj_load_model(const char *filename){
 				switch(line[1]){
 					case 'p':
 					case 't':
+						coordinates = split_coord(line);
+						++vt_count;
+						if(tmp_texture = realloc(obj_model.texture, vt_count * sizeof(struct model_vt))){
+							obj_model.texture = tmp_texture;
+							tmp_texture[vt_count - 1].x = coordinates[0];
+							tmp_texture[vt_count - 1].y = coordinates[1];
+							tmp_texture[vt_count - 1].z = coordinates[2];
+							++obj_model.vertex_count;
+						}
+
+						free(coordinates);
+						break;
 					case 'n':
 						break;
 					
@@ -101,7 +117,7 @@ struct object_model* obj_load_model(const char *filename){
 							}
 							
 							
-
+						free(coordinates);
 							
 						break;
 					
