@@ -34,26 +34,22 @@ surface (surf)
 geometric vertices
 */
 
-
-struct model_v {
+struct model_coord {
 	float x;
 	float y;
 	float z;
 };
 
-struct model_vt {
-	float x;
-	float y;
-	float z;
-};
+
 
 struct object_model {
 	char name[56];
 	unsigned long vertex_count;
 	unsigned long textures_count;
 	unsigned long normals_count;
-	struct model_v *vertex;
-	struct model_vt *texture;
+	struct model_coord *vertex; /* v */
+	struct model_coord *texture; /* vt */
+	struct model_coord *normals; /* vn */
 };
 
 void obj_loader_Init();

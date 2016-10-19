@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define LINE_SIZE (60 * 4)
+#define LINE_SIZE (60)
 
 
 struct object_model obj_model;
@@ -18,11 +18,12 @@ void obj_loader_Init(){
 	strcpy(obj_model.name, "");
 	obj_model.vertex  =  NULL;
 	obj_model.texture =  NULL;
+	obj_model.normals =  NULL;
 	obj_model.vertex_count = 0;
 	obj_model.textures_count = 0;
 	obj_model.normals_count = 0;
 	
-	obj_model.vertex = calloc(sizeof(struct model_v),1);
+	obj_model.vertex = calloc(sizeof(struct model_coord),1);
 	
 	
 }
@@ -59,8 +60,10 @@ struct object_model* obj_load_model(const char *filename){
 	float *coordinates = NULL;
 	long line_count  = 0;
 	long vt_count = 0;
-	struct model_v *tmp_vertex = NULL;
-	struct model_vt *tmp_texture = NULL;
+	long vn_count = 0;
+	struct model_coord *tmp_vertex = NULL;
+	struct model_coord  *tmp_texture = NULL;
+	struct model_coord  *tmp_normals = NULL;
 	
 	obj_loader_Init();
 	
@@ -87,20 +90,32 @@ struct object_model* obj_load_model(const char *filename){
 			case 'v': /* can be v, vt or vp or vn */
 				switch(line[1]){
 					case 'p':
+						break;
 					case 't':
 						coordinates = split_coord(line);
 						++vt_count;
-						if(tmp_texture = realloc(obj_model.texture, vt_count * sizeof(struct model_vt))){
+						if(tmp_texture = realloc(obj_model.texture, vt_count * sizeof(struct model_coord))){
 							obj_model.texture = tmp_texture;
 							tmp_texture[vt_count - 1].x = coordinates[0];
 							tmp_texture[vt_count - 1].y = coordinates[1];
 							tmp_texture[vt_count - 1].z = coordinates[2];
-							++obj_model.vertex_count;
+							++obj_model.textures_count;
+							free(coordinates);
 						}
 
-						free(coordinates);
+
 						break;
 					case 'n':
+						coordinates = split_coord(line);
+						++vn_count;
+						if(tmp_normals = realloc(obj_model.normals, vn_count * sizeof(struct model_coord))){
+							obj_model.normals = tmp_normals;
+							tmp_texture[vn_count - 1].x = coordinates[0];
+							tmp_texture[vn_count - 1].y = coordinates[1];
+							tmp_texture[vn_count - 1].z = coordinates[2];
+							++obj_model.normals_count;
+							free(coordinates);
+						}
 						break;
 					
 					
@@ -108,16 +123,17 @@ struct object_model* obj_load_model(const char *filename){
 					
 							coordinates = split_coord(line);
 							++line_count;
-							if( tmp_vertex = realloc(obj_model.vertex, line_count * sizeof(struct model_v))){
+						if( tmp_vertex = realloc(obj_model.vertex, line_count * sizeof(struct model_coord))){
 								obj_model.vertex = tmp_vertex;
 								tmp_vertex[line_count - 1].x = coordinates[0];
 								tmp_vertex[line_count - 1].y = coordinates[1];
 								tmp_vertex[line_count - 1].z = coordinates[2];
 								++obj_model.vertex_count;
+								free(coordinates);
 							}
 							
 							
-						free(coordinates);
+
 							
 						break;
 					
@@ -128,6 +144,10 @@ struct object_model* obj_load_model(const char *filename){
 	}
 	
 
+	free(tmp_vertex);
+	free(tmp_texture);
+	free(tmp_normals);
+
 	
 	return &obj_model;
 	
@@ -135,6 +155,3 @@ struct object_model* obj_load_model(const char *filename){
 }
 
 
-void obj_copy_vertex(struct model_v* dest, struct object_model *orig){
-
-}
