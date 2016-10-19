@@ -147,6 +147,7 @@ struct object_model* obj_load_model(const char *filename){
 	free(tmp_vertex);
 	free(tmp_texture);
 	free(tmp_normals);
+	fclose(obj_input);
 
 	
 	return &obj_model;
