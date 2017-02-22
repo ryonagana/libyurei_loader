@@ -44,15 +44,27 @@ static float* Tokenize(char *text){
 
 
 
-static void obj_readVertex(struct obj_coord *coordinates[], int c, const char *line){
-     fprintf(stdout, "%f %f %f\n", coordinates[c]->x, coordinates[c]->y, coordinates[c]->x );
+static void obj_readVertex(int c, char *line){
+    float *new_coord =  NULL;
+          
     
+      
+       if (new_coord != NULL || line != '\0'){
+        new_coord = Tokenize(line);
+        model.vertex[c].x = new_coord[0];
+        model.vertex[c].y = new_coord[1];
+        model.vertex[c].z = new_coord[2];
+        free(new_coord);
+      }
+    
+   
 }
 
-static void ReadVertex(){
+static void ReadVertex(void){
     size_t c = 0;
     char buf[256];
     while( fgets(buf,60, obj_file)){
+        if(buf[0] == '#' ) continue;
         switch(buf[0]){
             case 'v':
                 switch(buf[1]){
@@ -63,10 +75,14 @@ static void ReadVertex(){
             break;
         }
     }
-    rewind(obj_file);
-    printf("NUM V: %d", c);
-    model.vertex = calloc(c, sizeof( struct obj_coord ));
     
+    fprintf(stdout, "Read %zu vertexes\n", c);  
+    /*
+     * rollback the file to the beginning
+     * */
+    rewind(obj_file);
+    model.vertex = (struct obj_coord *)  calloc(c, sizeof( struct obj_coord ));
+
     return;
 }
 
@@ -91,7 +107,7 @@ static void obj_readLine(void){
                         
                         /* LOAD V */
                         case ' ':
-                            obj_readVertex(&model.vertex, ++model.v_count, buf);
+                            obj_readVertex(model.v_count++, buf); 
                             break;
                     }
             break;

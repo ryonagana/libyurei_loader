@@ -11,4 +11,4 @@ except ImportError as e:
 
 
 
-yurei.load("model//eyeball.obj")
+model = yurei.load("model//eyeball.obj")
