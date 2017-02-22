@@ -11,11 +11,43 @@ static PyObject* YR_Init(PyObject *self, PyObject *args){
 }
 
 
+
+static PyObject*  YR_vertex_obj(PyObject *self, PyObject *args){
+    int i;
+    PyObject *dict = NULL;
+    PyListObject *list = NULL;
+
+    list = (PyListObject *)Py_BuildValue("[]");
+    for(i = 0; i < model.v_count; ++i){
+        dict = Py_BuildValue("{s:(f,f,f)}", "v", model.vertex[i].x, model.vertex[i].y, model.vertex[i].z);
+        PyList_Append(list,dict);
+    }
+    Py_INCREF(list);
+    return (PyObject *)list;
+
+}
+
+static PyObject*  YR_vt_obj(PyObject *self, PyObject *args){
+    int i;
+    PyObject *dict = NULL;
+    PyListObject *list = NULL;
+
+    list = (PyObject *)Py_BuildValue("[]");
+    for(i = 0; i < model.vt_count; ++i){
+        dict = Py_BuildValue("{s:(f,f)}", "vt", model.vt[i].x, model.vt[i].y);
+        PyList_Append(list,dict);
+    }
+    Py_INCREF(list);
+    return (PyObject *)list;
+
+}
+
+
 static PyObject* YR_Load_Obj_Handler(PyObject *self, PyObject *args){
         char *filename = NULL;
-        PyObject *dict = NULL;
-        PyListObject *vertex = NULL;
-        int i;
+        
+
+
 
         if (!PyArg_ParseTuple(args, "s", &filename)){
             printf("--%s--\n", filename);
@@ -23,18 +55,11 @@ static PyObject* YR_Load_Obj_Handler(PyObject *self, PyObject *args){
         }
 
         YR_Load_Obj(filename);
-        
-        /* add vertex */
+        Py_RETURN_TRUE; 
 
-        vertex = (PyListObject *) Py_BuildValue("[]");
-        for (i = 0; i < model.v_count; ++i){
-            
-            dict = Py_BuildValue("{s:(d,d,d)}", "v",  model.vertex[i].x, model.vertex[i].y, model.vertex[i].z);
-            PyList_Append(vertex,dict); 
-        }
         
-        Py_INCREF(vertex);
-        return (PyObject *) vertex;
+
+
         
 
 }
@@ -45,6 +70,8 @@ static PyMethodDef YureiMethods[] = {
      "Execute a shell command."},
     {"load",  YR_Load_Obj_Handler, METH_VARARGS,
      "Load Model."},
+     {"vertex",  YR_vertex_obj, METH_VARARGS, "Vertex"},
+     {"vt",      YR_vt_obj, METH_VARARGS, "Vertex Textures"},
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
 
@@ -58,7 +85,6 @@ static struct PyModuleDef yureimodule = {
 };
 
 
-static PyObject *YureiError;
 
 
 PyMODINIT_FUNC

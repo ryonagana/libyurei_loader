@@ -9,8 +9,10 @@
 
 struct obj_model {
     char name[56];
-
+    
+    struct obj_coord *vt;
     struct obj_coord *vertex;
+    size_t vt_count;
     size_t v_count;
 };
 
